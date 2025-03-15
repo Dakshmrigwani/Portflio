@@ -2,14 +2,6 @@
 
 import { useEffect, useState } from "react";
 import {
-  Apple,
-  BadgeCent,
-  BadgeInfo,
-  BadgeX,
-  Banana,
-  Bolt,
-} from "lucide-react";
-import {
   IconFileTypeHtml,
   IconFileTypeCss,
   IconBrandJavascript,
@@ -21,187 +13,37 @@ import {
   IconBrandRedux,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import Me from "./me.png";
-import LampDemo from "@/components/ui/lamp";
+import { OrbitingCircles } from "@/components/magicui/orbiting-circles";
 
-export const LucideIcons = [
-  <IconFileTypeHtml key="html" className="h-12 w-12" />,
-  <IconFileTypeCss key="css" className="h-12 w-12" />,
-  <IconBrandJavascript key="javascript" className="h-12 w-12" />,
-  <IconFileTypeTsx key="typescript" className="h-12 w-12" />,
-  <IconBrandBootstrap key="bootstrap" className="h-12 w-12" />,
-  <IconBrandTailwind key="tailwind" className="h-12 w-12" />,
-  <IconBrandReact key="react" className="h-12 w-12" />,
-  <IconBrandNextjs key="nextjs" className="h-12 w-12" />,
-  <IconBrandRedux key="redux" className="h-12 w-12" />,
+const Frontend = [
+  { icon: <IconFileTypeHtml className="h-12 w-12" />, name: "HTML" },
+  // { icon: <IconFileTypeCss className="h-12 w-12" />, name: "CSS" },
+  // { icon: <IconBrandJavascript className="h-12 w-12" />, name: "JavaScript" },
+  // { icon: <IconFileTypeTsx className="h-12 w-12" />, name: "TypeScript" },
+  // { icon: <IconBrandBootstrap className="h-12 w-12" />, name: "Bootstrap" },
+  // { icon: <IconBrandTailwind className="h-12 w-12" />, name: "Tailwind" },
+  // { icon: <IconBrandReact className="h-12 w-12" />, name: "React" },
+  // { icon: <IconBrandNextjs className="h-12 w-12" />, name: "Next.js" },
+  // { icon: <IconBrandRedux className="h-12 w-12" />, name: "Redux" },
 ];
 
-interface OrbitingItems3DProps {
-  /**
-   * The radius of the ellipse on X-axis in percentage, relative to the container.
-   */
-  radiusX: number;
-
-  /**
-   * The radius of the ellipse on Y-axis in percentage, relative to the container.
-   */
-  radiusY: number;
-
-  /**
-   * The angle at which ellipse is tilted to x-axis.
-   */
-  tiltAngle: number;
-
-  /**
-   * The time taken for the revolution around the center element.
-   */
-  duration: number;
-
-  /**
-   * The items to orbit around the center of the parent element.
-   */
-  items: React.ReactNode[];
-
-  /**
-   * Class name for the background element.
-   */
-  backgroundClassName?: string;
-
-  /**
-   * Class name for the container element.
-   */
-  containerClassName?: string;
-
-  /**
-   * Additional classes for the item container.
-   */
-  className?: string;
-}
-
-export default function Skills({
-  radiusX = 120,
-  radiusY = 30,
-  tiltAngle = 360 - 30,
-  duration = 25,
-  items = LucideIcons,
-  backgroundClassName,
-  containerClassName,
-  className,
-}: OrbitingItems3DProps) {
-  // The OrbitingItems3D component creates an animated elliptical orbiting effect for a set of items around a central element.
-  // It allows for a visually dynamic layout, where items revolve around the center in a smooth, continuous motion,
-  // creating the illusion of 3D movement. The component provides a range of customizable options to control the orbit,
-  // including the size of the elliptical path, tilt angle, and animation duration.
-
-  const CenterIcon = (
-    <Image
-      className="center object-contain z-0 h-32 w-32 animate-float rounded-full bg-gradient-to-r from-purple-400 to-blue-400 shadow-lg"
-      style={{
-        boxShadow: "0 0 20px 10px rgba(128, 90, 213, 0.6)",
-      }}
-      src={Me}
-      alt="image"
-    />
-  );
-
-  const CalculateItemStyle = ({
-    index,
-    radiusX,
-    radiusY,
-    totalItems,
-    tiltAngle,
-    duration,
-  }: {
-    index: number;
-    radiusX: number;
-    radiusY: number;
-    totalItems: number;
-    tiltAngle: number;
-    duration: number;
-  }) => {
-    const angleStep = 360 / totalItems;
-    const [angle, setAngle] = useState(index * angleStep);
-    useEffect(() => {
-      const animation = setInterval(() => {
-        setAngle((prevAngle) => (prevAngle + 1) % 360);
-      }, duration);
-
-      return () => clearInterval(animation);
-    }, [duration]);
-    // Calculate the current angle for the item on the orbit
-
-    const radians = (angle * Math.PI) / 180;
-
-    // X and Y positions before tilt
-    const x = radiusX * Math.cos(radians);
-    const y = radiusY * Math.sin(radians);
-
-    // Apply the tilt using rotation matrix
-    const tiltRadians = (tiltAngle * Math.PI) / 180;
-    const xTilted = x * Math.cos(tiltRadians) - y * Math.sin(tiltRadians);
-    const yTilted = x * Math.sin(tiltRadians) + y * Math.cos(tiltRadians);
-    const zIndex = angle > 180 ? -1 : 1;
-    const scale = angle < 180 ? 1.2 : 1.0;
-
-    return {
-      left: `${50 + xTilted}%`,
-      top: `${50 + yTilted}%`,
-      transform: `translate(-50%, -50%) scale(${scale})`,
-      zIndex: zIndex,
-      transition: "transform 0.8s ease-in-out",
-    };
-  };
-
-  
-
-  const reverse = cn(
-    "transition-transform ease-linear direction-reverse repeat-infinite"
-  );
-
+export default function Skills() {
   return (
-    <>
-     <LampDemo />
-      <div
-        className={cn(
-          "storybook-fix group flex flex-col items-center justify-center py-32",
-          containerClassName
-        )}
-      >
-       
-        <div
-          className={cn(
-            "absolute inset-0 -z-10 h-full w-full items-center bg-black",
-            backgroundClassName
-          )}
-        />
-        <div
-          className={cn(
-            "relative flex h-64 w-64 items-center justify-center ease-linear repeat-infinite",
-            className
-          )}
-        >
-          {CenterIcon}
-          {items.map((item, index) => {
-            return (
-              <div
-                key={index}
-                className="absolute flex h-20 w-20 items-center justify-center rounded-full bg-white/30 shadow-xl shadow-purple-500/30 backdrop-blur-md transition-transform duration-500 ease-out"
-                style={CalculateItemStyle({
-                  index,
-                  radiusX,
-                  radiusY,
-                  tiltAngle,
-                  totalItems: items.length,
-                  duration,
-                })}
-              >
-                <div className={reverse}>{item}</div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </>
+    <div className="min-h-screen relative flex flex-col max-w-5xl mx-auto w-full items-center justify-center mb-40 bg-black overflow-hidden">
+      <OrbitingCircles iconSize={50}>
+        {Frontend.map((skill, index) => (
+          <div key={index} className="text-white">
+            {skill.icon}
+          </div>
+        ))}
+      </OrbitingCircles>
+      <OrbitingCircles iconSize={40} radius={120} reverse speed={2}>
+        {Frontend.map((skill, index) => (
+          <div key={index} className="text-gray-300">
+            {skill.icon}
+          </div>
+        ))}
+      </OrbitingCircles>
+    </div>
   );
 }
