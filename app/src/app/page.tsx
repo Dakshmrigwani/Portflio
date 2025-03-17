@@ -2,7 +2,8 @@ import About from "./about-section";
 import { Experience } from "./experience";
 import { HeroHighlightDemo } from "./hero-section";
 import Marketing from "./marketing";
-import Skills from "./skill";
+import Projects from "./projects";
+// import Skills from "./skill";
 
 export default function Home() {
   return (
@@ -11,7 +12,8 @@ export default function Home() {
       <About />
       <Experience />
       <Marketing />
-      <Skills />
+      {/* <Skills /> */}
+      <Projects />
     </>
   );
 }
