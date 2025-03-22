@@ -6,18 +6,18 @@ import jsImage from "../Images/javascript.svg";
 import jqueryImage from "../Images/jquery.svg";
 import reactImage from "../Images/reactjs.svg";
 import nodeImage from "../Images/node.svg";
-import expressImage from "../Images/express.svg";
+import expressImage from "../Images/express.png";
 import mongodbImage from "../Images/mongodb.svg";
 import githubImage from "../Images/github.svg";
 import dockerImage from "../Images/docker.svg";
-import nextImage from "../Images/nextjs.svg";
+import nextImage from "../Images/nextjs.png";
 import redisImage from "../Images/redis.svg";
 import reduxImage from "../Images/redux.svg";
 import typescriptImage from "../Images/typescript.svg";
 import mui from "../Images/mui.svg";
 import tailwindImage from "../Images/tailwind.svg";
 import bootstrapImage from "../Images/bootstrap.svg";
-import jsonwebToken from "../Images/jsonwebtoken.svg";
+import jsonwebToken from "../Images/jwt.png";
 import firebase from "../Images/firebase.svg";
 import awsImage from "../Images/aws.svg";
 import reactNative from "../Images/react-native.png";
@@ -107,7 +107,7 @@ export default function Skiils() {
               className="custom-spotlight-card"
               spotlightColor="rgba(0, 229, 255, 0.2)"
             >
-              <Image src={nextImage} alt="Nextjs" className="mx-auto" />
+              <Image src={nextImage} alt="Nextjs" className="mx-auto h-full w-full" />
             </SpotlightCard>
             <SpotlightCard
               className="custom-spotlight-card"
@@ -141,7 +141,7 @@ export default function Skiils() {
               className="custom-spotlight-card"
               spotlightColor="rgba(0, 229, 255, 0.2)"
             >
-              <Image src={expressImage} alt="Expressjs" className="mx-auto" />
+              <Image src={expressImage} alt="Expressjs" className="mx-auto h-full" />
             </SpotlightCard>
             <SpotlightCard
               className="custom-spotlight-card"
@@ -162,7 +162,7 @@ export default function Skiils() {
               <Image
                 src={jsonwebToken}
                 alt="jsonwebToken"
-                className="mx-auto"
+                className="mx-auto h-full w-full object-contain"
               />
             </SpotlightCard>
             <SpotlightCard
