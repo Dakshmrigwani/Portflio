@@ -1,10 +1,7 @@
 "use client";
 import { ReactLenis, useLenis } from "lenis/react";
 
-export default function Marketing(): JSX.Element {
-  useLenis(({ scroll }) => {
-    // Custom scroll behavior can be added here
-  });
+export default function Marketing() {
 
   return (
     <ReactLenis root>
