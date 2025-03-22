@@ -4,7 +4,6 @@ import { HeroHighlight, Highlight } from "../components/ui/hero-highlight";
 import { Spotlight } from "@/components/ui/spotlight-new";
 import { TypewriterEffect } from "../components/ui/typewriter-effect";
 import { HoverBorderGradient } from "../components/ui/hover-border-gradient";
-import { RainbowButton } from "@/components/magicui/rainbow-button";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 
 export function HeroHighlightDemo() {
