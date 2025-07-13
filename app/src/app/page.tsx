@@ -1,8 +1,9 @@
 import About from "./about-section";
+import Education from "./education";
 import { Experience } from "./experience";
 import { HeroHighlightDemo } from "./hero-section";
 import Marketing from "./marketing";
-// import Projects from "./projects";
+import Projects from "./projects";
 import Skills from "./skill";
 
 export default function Home() {
@@ -12,9 +13,10 @@ export default function Home() {
       <About />
       <Skills />
       <Experience />
-      <Marketing />
+      <Education />
 
       {/* <Projects /> */}
+      <Marketing />
     </>
   );
 }

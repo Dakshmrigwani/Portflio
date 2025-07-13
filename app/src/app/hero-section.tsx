@@ -34,7 +34,7 @@ export function HeroHighlightDemo() {
   ];
 
   return (
-    <div className="h-screen w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+    <div className="h-screen w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden" id="#home">
       <Spotlight />
       <HeroHighlight>
         <motion.h1
@@ -58,15 +58,15 @@ export function HeroHighlightDemo() {
             Full Stack Developer
           </Highlight>
           <TypewriterEffect words={words} className="my-3 text-lg lg:text-4xl" />
-          <div className="max-w-lg mx-auto flex justify-between align-center mt-8">
+          <div className="max-w-lg mx-auto flex justify-center align-center mt-8">
             <HoverBorderGradient
               containerClassName="rounded-full"
               as="button"
               className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-5 text-xs lg:text-lg"
             >
-              <span>Contact Me</span>
+              <span>Download Resume</span>
             </HoverBorderGradient>
-            <InteractiveHoverButton className="text-xs lg:text-lg">Download Resume</InteractiveHoverButton>
+            
           </div>
         </motion.h1>
       </HeroHighlight>

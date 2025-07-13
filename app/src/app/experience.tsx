@@ -100,7 +100,7 @@ export function Experience() {
   ];
   return (
     <>
-      <div className="w-full text-change">
+      <div className="w-full text-change" id="experience">
         <Timeline data={data} />
       </div>
     </>

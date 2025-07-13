@@ -140,7 +140,9 @@
   --color-4: hsl(195 100% 63%);
   --color-5: hsl(90 100% 63%);
 }
-
+html {
+  scroll-behavior: smooth;
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;

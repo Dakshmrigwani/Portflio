@@ -26,7 +26,7 @@ import Image from "next/image";
 export default function Skiils() {
   return (
     <>
-      <div className="min-h-screen bg-black py-3">
+      <div className="min-h-screen bg-black py-3" id="skill">
         <TrueFocus
           sentence="Skills might you Looking for"
           manualMode={false}

@@ -1,15 +1,18 @@
-"use client"
+"use client";
 
 import { FloatingDock } from "@/components/ui/floating-dock";
 import {
   IconBrandGithub,
-  IconBrandX,
-  IconExchange,
   IconHome,
   IconUserBolt,
-  IconBriefcase2Filled
+  IconBriefcase2Filled,
+  IconBasketCog,
+  IconBackpack,
+  IconCode,
+  IconPhone,
+  IconBrandLinkedin,
+  IconMail,
 } from "@tabler/icons-react";
-import Image from "next/image";
 export default function SideNav() {
   const links = [
     {
@@ -17,7 +20,7 @@ export default function SideNav() {
       icon: (
         <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "#home",
     },
 
     {
@@ -25,57 +28,93 @@ export default function SideNav() {
       icon: (
         <IconUserBolt className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "#about",
+    },
+    {
+      title: "Skills",
+      icon: (
+        <IconBasketCog className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#skill",
     },
     {
       title: "Experience",
       icon: (
         <IconBriefcase2Filled className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "#experience",
     },
     {
-      title: "Aceternity UI",
+      title: "Education",
       icon: (
-        <Image
-          src="https://assets.aceternity.com/logo-dark.png"
-          width={20}
-          height={20}
-          alt="Aceternity Logo"
-        />
+        <IconBackpack className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "#education",
     },
     {
-      title: "Changelog",
+      title: "Project",
       icon: (
-        <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconCode className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
-    },
-
-    {
-      title: "Twitter",
-      icon: (
-        <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
+      href: "#project",
     },
     {
       title: "GitHub",
       icon: (
         <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://github.com/Dakshmrigwani",
+    },
+    {
+      title: "Linkedin",
+      icon: (
+        <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "www.linkedin.com/in/daksh-mrigwani",
+    },
+    {
+      title: "Contact Me",
+      icon: (
+        <IconPhone className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "tel:8528667236",
+    },
+    {
+      title: "Email ME",
+      icon: (
+        <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "mailto:mrigwanidaksh@gmail.com",
     },
   ];
+
+  const smoothScrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+  const handleClick = (href: string) => {
+    if (href.startsWith("#")) {
+      const id = href.substring(1);
+      smoothScrollTo(id);
+    } else {
+      // Handle external links if needed
+      window.location.href = href;
+    }
+  };
   return (
-    <div className="fixed right-0 bottom-30 lg:bottom-10 z-1 lg:left-1/3  lg:mx-auto lg:w-fit lg:transform  -translate-x-1/2 ">
+    <div className="fixed inset-x-0 bottom-8 z-10 flex justify-center">
       <FloatingDock
         mobileClassName="translate-y-20"
-        items={links}
+        items={links.map((link) => ({
+          ...link,
+          onClick: () => handleClick(link.href),
+        }))}
       />
     </div>
   );
 }
-  
