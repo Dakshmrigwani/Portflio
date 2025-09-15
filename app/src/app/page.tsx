@@ -4,6 +4,7 @@ import { Experience } from "./experience";
 import { HeroHighlightDemo } from "./hero-section";
 import Marketing from "./marketing";
 import Projects from "./projects";
+import Signup from "./signup";
 import Skills from "./skill";
 
 export default function Home() {
@@ -15,8 +16,9 @@ export default function Home() {
       <Experience />
       <Education />
 
-      {/* <Projects /> */}
+      <Projects />
       <Marketing />
+      <Signup />
     </>
   );
 }

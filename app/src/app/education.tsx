@@ -16,7 +16,7 @@ export default function Education() {
             </h5>
             <h5 className="text-md lg:text-xl font-bold text-light ">
               {" "}
-              <BoxReveal>Noida </BoxReveal>
+              <BoxReveal>Gurgaon </BoxReveal>
             </h5>
           </div>
           <div>

@@ -12,6 +12,7 @@ import {
   IconPhone,
   IconBrandLinkedin,
   IconMail,
+  IconForms
 } from "@tabler/icons-react";
 export default function SideNav() {
   const links = [
@@ -59,6 +60,13 @@ export default function SideNav() {
       href: "#project",
     },
     {
+      title:"Form",
+       icon: (
+        <IconForms className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#form",
+    },
+    {
       title: "GitHub",
       icon: (
         <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
@@ -70,7 +78,7 @@ export default function SideNav() {
       icon: (
         <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "www.linkedin.com/in/daksh-mrigwani",
+      href: "https://www.linkedin.com/in/daksh-mrigwani",
     },
     {
       title: "Contact Me",
