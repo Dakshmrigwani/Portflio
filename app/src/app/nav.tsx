@@ -12,7 +12,7 @@ import {
   IconPhone,
   IconBrandLinkedin,
   IconMail,
-  IconForms
+  IconForms,
 } from "@tabler/icons-react";
 export default function SideNav() {
   const links = [
@@ -60,8 +60,8 @@ export default function SideNav() {
       href: "#project",
     },
     {
-      title:"Form",
-       icon: (
+      title: "Form",
+      icon: (
         <IconForms className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "#form",
@@ -115,7 +115,7 @@ export default function SideNav() {
     }
   };
   return (
-    <div className="fixed inset-x-0 bottom-8 z-10 flex justify-center">
+    <div className="fixed right-[20px] md:inset-x-0 bottom-[100px] md:bottom-8 z-10 flex justify-center">
       <FloatingDock
         mobileClassName="translate-y-20"
         items={links.map((link) => ({
