@@ -19,9 +19,9 @@ interface SlideProps {
 const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
   const slideRef = useRef<HTMLLIElement>(null);
 
- const xRef = useRef(0);
-const yRef = useRef(0);
-const frameRef = useRef<number | undefined>(undefined);
+  const xRef = useRef(0);
+  const yRef = useRef(0);
+  const frameRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const animate = () => {
