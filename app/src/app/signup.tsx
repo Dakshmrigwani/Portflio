@@ -117,7 +117,7 @@ export default function Signup() {
       )}
 
       <form
-        className="my-8 mx-auto max-w-lg relative z-10 mb-10 pb-12 px-4"
+        className="my-8 mx-auto max-w-lg relative mb-10 pb-12 px-4"
         onSubmit={handleSubmit}
       >
         <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">

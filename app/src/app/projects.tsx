@@ -1,7 +1,7 @@
 import ExpandableCardDemo from "@/components/expandable-card-demo-grid";
 import Image from "next/image";
 import Carousel from "@/components/ui/carousel";
-import project from "../Images/project1.png"
+import project from "../Images/project1.png";
 
 export default function Projects() {
   const slideData = [
@@ -21,7 +21,25 @@ export default function Projects() {
       title: "Theraphy sync",
       button: "Explore Project",
       src: "/project3.png",
-      link:"http://34.226.30.17:5052/"
+      link: "http://34.226.30.17:5052/",
+    },
+    {
+      title: "Bitcoin ABCS",
+      button: "Explore Project",
+      src: "/project4.png",
+      link: "https://bitcoinabcs.org/",
+    },
+    {
+      title: "Ralpel",
+      button: "Explore Project",
+      src: "/project5.png",
+      link: "https://ralpel.com/",
+    },
+    {
+      title: "Clinic Management System",
+      button: "Explore Project",
+      src: "/project6.png",
+      link: "https://clinic-management-eta-one.vercel.app/",
     },
   ];
   return (
