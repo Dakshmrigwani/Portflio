@@ -17,18 +17,11 @@ export default function Projects() {
       src: "/project2.png",
       link: "https://www.discountdoorandwindow.com/",
     },
-    {
-      title: "Theraphy sync",
-      button: "Explore Project",
-      src: "/project3.png",
-      link: "http://34.226.30.17:5052/",
-    },
-    {
-      title: "Bitcoin ABCS",
-      button: "Explore Project",
-      src: "/project4.png",
-      link: "https://bitcoinabcs.org/",
-    },
+   {title: "Chiswick Park Cars",
+     button: "Explore Project",
+      src: "/project-2.png",
+      link: "https://chiswickparkcars.com/"
+   },
     {
       title: "Ralpel",
       button: "Explore Project",
@@ -40,6 +33,12 @@ export default function Projects() {
       button: "Explore Project",
       src: "/project6.png",
       link: "https://clinic-management-eta-one.vercel.app/",
+    },
+      {
+      title: "Jewel Box",
+      button: "Explore Project",
+      src: "/project7.png",
+      link: "https://www.jewelsbox.co/",
     },
   ];
   return (
